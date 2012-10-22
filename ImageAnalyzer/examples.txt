@@ -1,0 +1,29 @@
+try {
+            System.out.println("Different pixels between dog and dog2: " + ia.DifferentPixels(dog, dog2));
+            System.out.println("Average Red value: " + ia.averageSingleRGBValue(ia.toBufferedImage(paw), 1));
+            System.out.println("Average Blue value of Fish: " + ia.averageSingleRGBValue(ia.toBufferedImage(paw), 2));
+            System.out.println("Average Green value of Fish: " + ia.averageSingleRGBValue(ia.toBufferedImage(paw), 3));
+            ia.printBWTarget(dog, '?', '?');
+            System.out.println("The average RGB value for the paw is: " + ia.RGBValue(ia.averageRGBValue(ia.toBufferedImage(paw))));
+            ia.printTarget(paw, '?', '?');
+            ia.createImageClusterFile(ia.toBufferedImage(dog), new File("dog.txt"));
+            
+            BufferedImage fishBlackened_1 = ia.highlightedSubject(new Color(56, 49, 29).getRGB(), 1000000, ia.toBufferedImage(fish_1));
+            BufferedImage fishBlackened_2 = ia.highlightedSubject(new Color(56, 49, 29).getRGB(), 100000, ia.toBufferedImage(fish_2));
+            ImageIO.write(fishBlackened_1 , "jpg", new File("dark_fish_1.jpg"));
+            ImageIO.write(fishBlackened_2 , "jpg", new File("dark_fish_2.jpg"));
+
+            JFrame frame = new JFrame("Fish");
+            frame.setPreferredSize(new Dimension(600, 600));
+            frame.getContentPane().add(new JPanel().add(new JLabel(new ImageIcon(fishBlackened_1))));
+
+            frame.pack();
+            frame.setVisible(true);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        } catch (IOException ex) {
+            Logger.getLogger(CompareImage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(CompareImage.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.print("Fail");
+        }
