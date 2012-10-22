@@ -1,0 +1,1 @@
+\*****Tracking results of FishFrames*****/%n%n%nNumber of Frames - 286%n%nVideo length - 9 seconds%n%nLocation at:%n	1:	X:115 , Y: 307%n	2:	X:90 , Y: 312%n	3:	X:110 , Y: 342%n	4:	X:112 , Y: 361%n	5:	X:170 , Y: 384%n	6:	X:320 , Y: 393%n	7:	X:412 , Y: 392%n	8:	X:477 , Y: 384%n	9:	X:538 , Y: 374%n
